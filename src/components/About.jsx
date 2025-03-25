@@ -66,7 +66,7 @@ const About = () => {
       variants={fadeIn("", "", 0.1, 1)}
       className="text-secondary text-[17px] leading-[30px] max-w-xl text-center md:text-left"
     >
-      "I'm a skilled software developer with experience in C++ and JavaScript, with expertise in frameworks like React and Node.js. Currently, I am a pre-final year student pursuing a B.Tech degree in Computer Science and Engineering at the National Institute of Technology, Agartala. I have a strong grasp of Data Structures and Algorithms (DSA) and enjoy solving complex problems efficiently. I am a quick learner, passionate about building scalable and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!"
+      "I'm a skilled software developer with experience in C++ and JavaScript, with expertise in frameworks like Reactjs and Node.js. Currently, I am a pre-final year student pursuing a B.Tech degree in Computer Science and Engineering at the National Institute of Technology, Agartala. I have a strong grasp of Data Structures and Algorithms (DSA) and enjoy solving complex problems efficiently. I am a quick learner, passionate about building scalable and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!"
     </motion.p>
 
   </div>
