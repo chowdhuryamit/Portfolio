@@ -5,8 +5,10 @@ import { styles } from '../style.js'
 import { services } from '../constants/index.js'
 import {fadeIn,textVariant} from "../utils/motion.js"
 import SectionWraper from "../hoc/SectionWraper.jsx"
+import { amit } from '../assets/index.js'
 
 const ServiceCard = ({index,title,icon})=>{
+  
   return(
     <Tilt className='xs:w-[250px] w-full'>
     <motion.div
@@ -39,28 +41,45 @@ const ServiceCard = ({index,title,icon})=>{
 const About = () => {
   return (
     <>
-    <motion.div variants={textVariant()}>
-      <p className={styles.sectionSubText}>Introduction</p>
-      <h2 className={styles.sectionHeadText}>Overview.</h2>
-    </motion.div>
+  <motion.div variants={textVariant()}>
+    <p className={styles.sectionSubText}>Introduction</p>
+    <h2 className={styles.sectionHeadText}>Overview.</h2>
+  </motion.div>
 
+  {/* Container with Image + Text */}
+  <div className="mt-10 flex flex-col md:flex-row items-center md:items-start gap-10 justify-between">
+    
+    {/* Left Section: Image */}
+    <Tilt>
+    <div className="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0">
+      <img 
+        src={amit}
+        alt="amit chowdhury" 
+        className="w-full h-full object-cover"
+      />
+    </div>
+    </Tilt>
+    
+
+    {/* Right Section: About Me Text */}
     <motion.p
       variants={fadeIn("", "", 0.1, 1)}
-      className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+      className="text-secondary text-[17px] leading-[30px] max-w-xl text-center md:text-left"
     >
-      I'm a skilled software developer with experience in C++ and
-      JavaScript, and expertise in frameworks like React, Node.js, and
-      Three.js. I'm a quick learner and collaborate closely with clients to
-      create efficient, scalable, and user-friendly solutions that solve
-      real-world problems. Let's work together to bring your ideas to life!
+      "I'm a skilled software developer with experience in C++ and JavaScript, with expertise in frameworks like React and Node.js. Currently, I am a pre-final year student pursuing a B.Tech degree in Computer Science and Engineering at the National Institute of Technology, Agartala. I have a strong grasp of Data Structures and Algorithms (DSA) and enjoy solving complex problems efficiently. I am a quick learner, passionate about building scalable and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!"
     </motion.p>
 
-    <div className='mt-20 flex flex-wrap gap-10'>
-      {services.map((service, index) => (
-        <ServiceCard key={service.title} index={index} {...service} />
-      ))}
-    </div>
-  </>
+  </div>
+
+  {/* Services Section */}
+  <div className="mt-20 flex flex-wrap gap-10">
+    {services.map((service, index) => (
+      <ServiceCard key={service.title.replace(/[^a-zA-Z0-9]/g, "")} index={index} {...service} />
+    ))}
+  </div>
+</>
+
+
   )
 }
 

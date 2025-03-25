@@ -28,7 +28,7 @@ const Contact = () => {
         to_name: "Amit Chowdhury",
         from_email: formData.email,
         to_email: "camit8546@gmail.com",
-        message: formData.message,
+        message: ` from ${formData.name} to me ${formData.message}. ${formData.email}`,
       },
       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
     )
@@ -118,4 +118,4 @@ const Contact = () => {
   )
 }
 
-export default SectionWraper(Contact,"")
+export default SectionWraper(Contact,"contact")

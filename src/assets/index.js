@@ -9,7 +9,6 @@ import close from "./close.svg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
@@ -18,17 +17,25 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import mysql from "./tech/mysql.png";
+import cpp from "./tech/c++.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import devops from './company/devops.png'
+import backend1 from './company/backend.png'
+import dsa from './company/dsa.png'
+import frontend1 from './company/frontend.png'
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import doceasy from './doceasy.png'
+import blog from './blog.png'
+import amit from './amit.jpg'
+import codechef from './codechef.png'
+import codeforces from './codeforces.png'
+import gfg from './geeksforgeeks.png'
+import leetcode from './leetcode.png'
+import resume from './AMIT_RESUME.pdf'
+import nitashopi from './nitashopi.jpeg'
+import linkdin from './linkedin.png'
+import insta from './instagram.png'
 
 export {
   logo,
@@ -41,7 +48,6 @@ export {
   close,
   css,
   docker,
-  figma,
   git,
   html,
   javascript,
@@ -50,13 +56,21 @@ export {
   reactjs,
   redux,
   tailwind,
-  typescript,
-  threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+  devops,
+  backend1,
+  dsa,
+  doceasy,
+  blog,
+  amit,
+  frontend1,
+  mysql,
+  cpp,
+  codechef,
+  codeforces,
+  gfg,
+  leetcode,
+  resume,
+  nitashopi,
+  linkdin,
+  insta
 };

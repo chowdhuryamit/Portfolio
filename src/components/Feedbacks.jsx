@@ -1,63 +1,53 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { styles } from '../style'
-import { Tilt } from 'react-tilt'
-import SectionWraper from '../hoc/SectionWraper'
-import { fadeIn,textVariant } from '../utils/motion'
-import { testimonials } from '../constants'
+import React from "react";
+import { motion } from "framer-motion";
+import { Tilt } from "react-tilt";
+import { achievements } from "../constants";
 
-const FeedbackCard = ({index,testimonial,name,designation,company,image})=>{
-  return(
-    <motion.div
-    variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
-  >
-    <Tilt>
-    <p className='text-white font-black text-[48px]'>"</p>
-
-    <div className='mt-1'>
-      <p className='text-white tracking-wider text-[18px]'>{testimonial}</p>
-
-      <div className='mt-7 flex justify-between items-center gap-1'>
-        <div className='flex-1 flex flex-col'>
-          <p className='text-white font-medium text-[16px]'>
-            <span className='blue-text-gradient'>@</span> {name}
-          </p>
-          <p className='mt-1 text-secondary text-[12px]'>
-            {designation} of {company}
-          </p>
-        </div>
-
-        <img
-          src={image}
-          alt={`feedback_by-${name}`}
-          className='w-10 h-10 rounded-full object-cover'
-        />
-      </div>
-    </div>
-    </Tilt>
-  </motion.div>
-  )
-}
-
-const Feedbacks = () => {
+const AchievementCard = ({ index, text, link, icon }) => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
-      <div
-        className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
+    <Tilt options={{ max: 25, scale: 1, speed: 400 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.2 }}
+        className="bg-black-200 p-6 rounded-2xl shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 w-full max-w-[320px] border border-gray-700"
       >
-        <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={styles.sectionHeadText}>Testimonials.</h2>
-        </motion.div>
-      </div>
-      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
-        ))}
-      </div>
-    </div>
-  )
-}
+        <img src={icon} alt="icon" className="w-14 h-14 object-contain mb-4 bg-black- rounded-full" />
 
-export default SectionWraper(Feedbacks,"")
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-lg font-bold hover:text-blue-400 transition duration-300"
+        >
+          {text}
+        </a>
+      </motion.div>
+    </Tilt>
+  );
+};
+
+const Achievements = () => {
+  return (
+    <section id="achievements" className="py-16 px-6 bg-gray-900 text-white">
+      <div className="max-w-5xl mx-auto text-center">
+        <motion.h2
+          className="text-4xl font-bold mb-10 text-blue-400"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Achievements 🏆
+        </motion.h2>
+
+        <div className="flex flex-wrap justify-center gap-6">
+          {achievements.map((achievement, index) => (
+            <AchievementCard key={index} index={index} {...achievement} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Achievements;
