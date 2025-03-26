@@ -44,6 +44,9 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+               <li className='text-[17px] font-medium cursor-pointer transition-colors'>
+                 <a href={resume} className='bg-blue-600 rounded-md p-1'>Resume</a>
+               </li>
             </ul>
           </div>
         </div>
