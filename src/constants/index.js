@@ -200,7 +200,7 @@ import {
     },
     {
       id: 3,
-      text: "3 ⭐ on GeegksForGeeks | Secured rank 488 on GfG Weekly - 199 [Rated Contest] | Global rank 4742",
+      text: "3 ⭐ on GeegksForGeeks | Secured rank 256 on GfG Weekly - 199 [Rated Contest] | Global rank 4742",
       link: "https://www.geeksforgeeks.org/user/camitztex/",
       icon: gfg,
     },
